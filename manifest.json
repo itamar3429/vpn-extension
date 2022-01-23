@@ -12,7 +12,9 @@
         "activeTab",
         "storage",
         "proxy",
-        "tabs"
+        "tabs",
+        "webRequest",
+        "webRequestBlocking"
     ],
     "icons": {
         "128": "icon.png"

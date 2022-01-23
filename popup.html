@@ -486,7 +486,7 @@
         <div id="modal-header">
             <h1 class="logo">
                 <img src="icon.jpg" alt="icon.jpg" id="logo-icon">
-                Amazon link Grabber
+                proxy setup
             </h1>
             <label class="alert alert-secondary" role="alert" id="alert">
                 alert
@@ -518,18 +518,37 @@
             <div class="content">
                 <section>
 
-                    <div style="width: 49%; position: relative;">
+                    <div style="width: 55%; position: relative; direction: ltr;">
                         <label for="ip">ip: </label>
-                        <input type="text" placeholder="ip" id="ip">
-                        <label for="port">port: </label>
-                        <input type="text" id="port" placeholder="port">
-                        <label for="username"></label>
-                        <input type="text" placeholder="username" id="username">
-                        <label for="password"></label>
-                        <input type="text" placeholder="password" id="password">
+                        <br><input type="text" placeholder="ip" id="ip">
+                        <br><label for="port">port: </label>
+                        <br><input type="text" id="port" placeholder="port">
+                        <div>
+                            <br><label for="username">username: </label>
+                            <br><input type="text" placeholder="username" id="username">
+                            <br><label for="password">password: </label>
+                            <br><input type="text" placeholder="password" id="password">
+                        </div>
+                        <div hidden>
+                            <br><label for="single">sites list</label>
+                            <br><textarea id="single" cols="30" rows="5"
+                                placeholder="list of site for proxy \n devide each site with (;)"></textarea>
+                        </div>
                     </div>
-                    <div style="margin-inline-start: 15px;">
-                        <button class="grabberbtns btn btn-outline-secondary" id="btnSetProxy">set</button>
+
+                    <div style="margin-inline-start: 15px; display: flex; flex-direction: column-reverse;">
+
+
+                        <button class="grabberbtns btn btn-outline-danger" style=" vertical-align: bottom;"
+                            id="btnDeleteProxy">delete</button>
+                        <button class="grabberbtns btn btn-outline-warning" style=" vertical-align: bottom;"
+                            id="btnClearProxy">clear</button>
+                        <button class="grabberbtns btn btn-outline-secondary" style=" vertical-align: bottom;"
+                            id="btnSetProxy">set</button>
+                        <label style="margin: 5px; margin-top: 10px; width: 100%;" for="currentProxy"
+                            id="currentProxy"></label>
+                        <select id="savedSelect" style="height: fit-content;">
+                        </select>
                     </div>
                 </section>
             </div>
