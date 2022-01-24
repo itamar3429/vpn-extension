@@ -115,8 +115,7 @@ window.onload = async () => {
         try {
             new Promise(async (resolve) => {
                 if (opt.username && opt.password) {
-
-                    // chrome.tabs.query({}, function (tabs) {
+                    // chrome.tabs.query({}, function (tabs) {  // message content.js
                     //     console.log(tabs);
                     //     console.log('log tabs');
                     //     for (let i = 0; i < tabs.length; i++) {
@@ -137,29 +136,6 @@ window.onload = async () => {
                         if (response)
                             setalert(response)
                     });
-
-                    // await chrome.webRequest.onAuthRequired.addListener((details) => {
-                    //         console.log("onAuthRequired!", details);
-                    //         let credentials = {
-                    //             username: opt.username,
-                    //             password: opt.password
-                    //         }
-                    //         return {
-                    //             authCredentials: credentials
-                    //         }
-
-                    //     }, {
-                    //         urls: ["<all_urls>"]
-                    //     },
-                    //     ['blocking']
-                    // );
-                    // chrome.webRequest.onCompleted.addListener(
-                    //     () => {
-                    //         setalert('proxy credentials set')
-                    //     }, {
-                    //         urls: ["<all_urls>"]
-                    //     }
-                    // );
                 }
                 var config = null
                 if (opt.ip && opt.port) {

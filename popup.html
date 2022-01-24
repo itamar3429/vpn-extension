@@ -478,6 +478,10 @@
         .grabberbtns {
             margin-bottom: 5px;
         }
+
+        .row {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
@@ -488,13 +492,12 @@
                 <img src="icon.jpg" alt="icon.jpg" id="logo-icon">
                 proxy setup
             </h1>
-            <label class="alert alert-secondary" role="alert" id="alert">
-                alert
+            <label class="alert alert-success" role="alert" style="position: absolute; right:0;" id="alert">
             </label>
         </div>
         <div id="modal-content">
 
-            <h2>Easily change chrome proxy</h2>
+            <h2>change chrome proxy</h2>
             <input type="radio" id="tab1" name="tab-control" checked>
             <!-- <input type="radio" id="tab2" name="tab-control">
             <input type="radio" id="tab3" name="tab-control">
@@ -518,37 +521,74 @@
             <div class="content">
                 <section>
 
-                    <div style="width: 55%; position: relative; direction: ltr;">
-                        <label for="ip">ip: </label>
-                        <br><input type="text" placeholder="ip" id="ip">
-                        <br><label for="port">port: </label>
-                        <br><input type="text" id="port" placeholder="port">
-                        <div>
-                            <br><label for="username">username: </label>
-                            <br><input type="text" placeholder="username" id="username">
-                            <br><label for="password">password: </label>
-                            <br><input type="text" placeholder="password" id="password">
-                        </div>
-                        <div hidden>
-                            <br><label for="single">sites list</label>
-                            <br><textarea id="single" cols="30" rows="5"
-                                placeholder="list of site for proxy \n devide each site with (;)"></textarea>
+                    <div class="col-sm-6">
+                        <div style="width: 80%; position: relative; direction: ltr;">
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="ip">ip: </label></div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" placeholder="ip" id="ip"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="port">port: </label></div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="port" placeholder="port"></div>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label for="username">username: </label></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" placeholder="username" id="username">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label for="password">password: </label></div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" placeholder="password" id="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div hidden>
+                                <br><label for="single">sites list</label>
+                                <br><textarea class="form-control" id="single" cols="30" rows="5"
+                                    placeholder="list of site for proxy \n devide each site with (;)"></textarea>
+                            </div>
                         </div>
                     </div>
 
-                    <div style="margin-inline-start: 15px; display: flex; flex-direction: column-reverse;">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <select id="savedSelect" class="form-select" style="height: fit-content;">
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label style="margin: 5px; margin-top: 10px; font-size: 17px;"
+                                    for="currentProxy">status:
+                                </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <label style="margin: 5px; margin-top: 10px; font-size: 17px;" for="currentProxy"
+                                    id="currentProxy"></label>
+                            </div>
+                        </div>
 
+                        <div class="row align-bottom" style="position:absolute; bottom:0;">
+                            <button class="grabberbtns btn btn-outline-success"
+                                style=" vertical-align: bottom; margin-right: 7px;" title="start and save proxy"
+                                id="btnSetProxy">Run</button>
+                            <button class="grabberbtns btn btn-outline-warning"
+                                style=" vertical-align: bottom; margin-right: 7px;" title="clear text and stop proxy"
+                                id="btnClearProxy">Reset</button>
+                            <button class="grabberbtns btn btn-outline-danger"
+                                style=" vertical-align: bottom; margin-right: 7px;"
+                                title="remove current proxy settings from memory" id="btnDeleteProxy">Remove</button>
+                        </div>
 
-                        <button class="grabberbtns btn btn-outline-danger" style=" vertical-align: bottom;"
-                            id="btnDeleteProxy">delete</button>
-                        <button class="grabberbtns btn btn-outline-warning" style=" vertical-align: bottom;"
-                            id="btnClearProxy">clear</button>
-                        <button class="grabberbtns btn btn-outline-secondary" style=" vertical-align: bottom;"
-                            id="btnSetProxy">set</button>
-                        <label style="margin: 5px; margin-top: 10px; width: 100%;" for="currentProxy"
-                            id="currentProxy"></label>
-                        <select id="savedSelect" style="height: fit-content;">
-                        </select>
                     </div>
                 </section>
             </div>

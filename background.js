@@ -7,13 +7,12 @@ window.onload = async () => {
         await new Promise(async (res) => {
             console.log(sender.url);
             if (opt.username && opt.password) {
-                await chrome.webRequest.onAuthRequired.addListener((details) => {
+                chrome.webRequest.onAuthRequired.addListener((details) => {
                         console.log(details);
-                        if (true) {
-                            console.log("onAuthRequired!", details);
+                        if (details.isProxy === true) {
                             let credentials = {
-                                username: opt.username,
-                                password: opt.password
+                                'username': opt.username,
+                                'password': opt.password
                             }
                             console.log('setting credentials');
                             return {
@@ -23,7 +22,7 @@ window.onload = async () => {
                     }, {
                         urls: ["<all_urls>"]
                     },
-                    ['asyncBlocking']
+                    ['blocking']
                 );
                 chrome.webRequest.onCompleted.addListener(
                     (details) => {

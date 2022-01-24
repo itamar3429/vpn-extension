@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "proxy setup",
-    "description": "set your own proxy",
-    "version": "1.0.0",
+    "description": "connect your own proxy to chrome",
+    "version": "1.0.5",
     "background": {
         "scripts": [
             "background.js"
