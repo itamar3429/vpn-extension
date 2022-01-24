@@ -136,7 +136,6 @@ window.onload = async () => {
                     }, function (response) {
                         if (response)
                             setalert(response)
-
                     });
 
                     // await chrome.webRequest.onAuthRequired.addListener((details) => {

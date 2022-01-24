@@ -3,7 +3,7 @@ console.log('content');
 const set_credentials = async (opt = {
     username,
     password
-}, sender) => {
+}, sender, sendResponse) => {
     console.log(sender.url);
     if (opt.username && opt.password) {
         await chrome.webRequest.onAuthRequired.addListener((details) => {
@@ -25,6 +25,8 @@ const set_credentials = async (opt = {
         chrome.webRequest.onCompleted.addListener(
             () => {
                 console.log('completed credentials')
+                if (sendResponse)
+                    sendResponse('messgae received');
             }, {
                 urls: ["<all_urls>"]
             }
@@ -35,10 +37,7 @@ const set_credentials = async (opt = {
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     console.log(message.data)
     await set_credentials(message.data, sender)
-    sendResponse({
-        data: {
-            success: true
-        }
-    });
+    sendResponse('messgae received');
+
 });
 // }
