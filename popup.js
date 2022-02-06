@@ -114,7 +114,7 @@ window.onload = async () => {
     }, cb) => {
         try {
             new Promise(async (resolve) => {
-                if (opt.username && opt.password) {
+                if (opt.username && opt.password && true) {
                     // chrome.tabs.query({}, function (tabs) {  // message content.js
                     //     console.log(tabs);
                     //     console.log('log tabs');
