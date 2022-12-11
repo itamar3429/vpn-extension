@@ -2,504 +2,504 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>proxy setup</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <style>
-        html {
-            background: white;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>proxy setup</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<style>
+		html {
+			background: white;
+		}
 
-        body {
-            background: #fcfcfc;
-            font-family: "Raleway";
-            height: 100%;
-            font-size: 15px;
-            width: 650px;
-            padding: 20px;
-            padding-bottom: 40px;
-            width: 100%;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            min-width: 240px;
-            width: 650px;
-        }
+		body {
+			background: #fcfcfc;
+			font-family: "Raleway";
+			height: 100%;
+			font-size: 15px;
+			width: 650px;
+			padding: 20px;
+			padding-bottom: 40px;
+			width: 100%;
+			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+			min-width: 240px;
+			width: 650px;
+		}
 
-        body h1 {
-            text-align: center;
-            color: #646566;
-            font-weight: 300;
-            margin: 0;
-        }
+		body h1 {
+			text-align: center;
+			color: #646566;
+			font-weight: 300;
+			margin: 0;
+		}
 
-        #modal-header {
-            height: fit-content;
-            width: 100%;
-            border-bottom: 1px dashed grey;
-            font-family: "menlo", monospace;
-            font-weight: 400;
-            color: grey;
-            align-content: center;
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 5px;
-        }
-
-
-
-        #logo-icon {
-            width: 80px;
-            vertical-align: middle;
-            margin-inline-start: 15px;
-        }
-
-        h1 {
-            font-size: 23px;
-            width: max-content;
-            width: fit-content;
-            margin: 0;
-            padding: 0;
-            height: fit-content;
-        }
-
-        h2 {
-            font-size: 15px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: grey;
-            width: fit-content;
-            border-bottom: 1px solid grey;
-            padding-bottom: 5px;
-            padding-top: 15px;
-            margin-bottom: 20px;
-        }
-
-        #content-bottom-right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 49%;
-            margin-top: 5px;
-        }
-
-        #content-bottom-right-selector {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 32%;
-            margin-top: 5px;
-        }
-
-        #content-bottom-right button {
-            width: fit-content;
-            margin-inline-end: 20px;
-        }
-
-        #content-bottom-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 32%;
-            margin-top: 5px;
-            overflow: hidden;
-        }
-
-        #asins-txt {
-            align-content: left;
-            height: 150px;
-            max-height: 150px;
-        }
-
-        #asins-selector {
-            align-content: left;
-            height: 150px;
-            max-height: 150px;
-            width: 90%;
-        }
-
-        #content-bottom nav ul li {
-            position: relative;
-            z-index: 1;
-            display: block;
-            margin: 0;
-            text-align: center;
-            width: 85px !important;
-        }
-
-        #content-bottom nav ul {
-            position: relative;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: -moz-flex;
-            display: -ms-flex;
-            display: flex;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 1200px;
-            list-style: none;
-            -ms-box-orient: horizontal;
-            -ms-box-pack: center;
-            -webkit-flex-flow: row wrap;
-            -moz-flex-flow: row wrap;
-            -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-            -webkit-justify-content: center;
-            -moz-justify-content: center;
-            -ms-justify-content: center;
-            justify-content: left;
-        }
-
-        .tab-current {
-            display: flex !important;
-            justify-content: space-around;
-
-        }
-
-        .sections {
-            display: none;
-        }
-
-        .btn {
-            width: 90px !important;
-            border-radius: 45px;
-        }
-
-        #content-bottom nav ul li a span {
-            vertical-align: middle;
-            font-size: 0.75em;
-        }
-
-        @import "bourbon";
-        @import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
-
-        /* colors */
-        /* tab setting */
-        /* breakpoints */
-        /* selectors relative to radio inputs */
+		#modal-header {
+			height: fit-content;
+			width: 100%;
+			border-bottom: 1px dashed grey;
+			font-family: "menlo", monospace;
+			font-weight: 400;
+			color: grey;
+			align-content: center;
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 5px;
+		}
 
 
 
-        .tabs {
-            left: 50%;
-            transform: translateX(-50%);
-            position: relative;
+		#logo-icon {
+			width: 80px;
+			vertical-align: middle;
+			margin-inline-start: 15px;
+		}
 
-        }
+		h1 {
+			font-size: 23px;
+			width: max-content;
+			width: fit-content;
+			margin: 0;
+			padding: 0;
+			height: fit-content;
+		}
 
-        .tabs input[name="tab-control"] {
-            display: none;
-        }
+		h2 {
+			font-size: 15px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: grey;
+			width: fit-content;
+			border-bottom: 1px solid grey;
+			padding-bottom: 5px;
+			padding-top: 15px;
+			margin-bottom: 20px;
+		}
 
-        .tabs .content section h2,
-        .tabs ul li label {
-            font-family: "Montserrat";
-            font-weight: bold;
-            font-size: 18px;
-            color: #646566;
-        }
+		#content-bottom-right {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 49%;
+			margin-top: 5px;
+		}
 
-        .tabs ul {
-            list-style-type: none;
-            padding-left: 0;
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 10px;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            width: 75%;
-        }
+		#content-bottom-right-selector {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 32%;
+			margin-top: 5px;
+		}
 
-        .tabs ul li {
-            box-sizing: border-box;
-            flex: 1;
-            width: 25%;
-            padding: 0 10px;
-            text-align: center;
-        }
+		#content-bottom-right button {
+			width: fit-content;
+			margin-inline-end: 20px;
+		}
 
-        .tabs ul li label {
-            transition: all 0.3s ease-in-out;
-            color: #929daf;
-            padding: 5px auto;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: block;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            white-space: nowrap;
-            -webkit-touch-callout: none;
-        }
+		#content-bottom-center {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 32%;
+			margin-top: 5px;
+			overflow: hidden;
+		}
 
-        .tabs ul li label br {
-            display: none;
-        }
+		#asins-txt {
+			align-content: left;
+			height: 150px;
+			max-height: 150px;
+		}
 
-        .tabs ul li label svg {
-            fill: #929daf;
-            height: 1.2em;
-            vertical-align: bottom;
-            margin-inline-end: 0.2em;
-            transition: all 0.2s ease-in-out;
-        }
+		#asins-selector {
+			align-content: left;
+			height: 150px;
+			max-height: 150px;
+			width: 90%;
+		}
 
-        .tabs ul li label:hover,
-        .tabs ul li label:focus,
-        .tabs ul li label:active {
-            outline: 0;
-            color: #bec5cf;
-        }
+		#content-bottom nav ul li {
+			position: relative;
+			z-index: 1;
+			display: block;
+			margin: 0;
+			text-align: center;
+			width: 85px !important;
+		}
 
-        .tabs ul li label:hover svg,
-        .tabs ul li label:focus svg,
-        .tabs ul li label:active svg {
-            fill: #bec5cf;
-        }
+		#content-bottom nav ul {
+			position: relative;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: flex;
+			margin: 0 auto;
+			padding: 0;
+			max-width: 1200px;
+			list-style: none;
+			-ms-box-orient: horizontal;
+			-ms-box-pack: center;
+			-webkit-flex-flow: row wrap;
+			-moz-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+			flex-flow: row wrap;
+			-webkit-justify-content: center;
+			-moz-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: left;
+		}
 
-        .tabs .slider {
-            position: relative;
-            width: 25%;
-            transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
-        }
+		.tab-current {
+			display: flex !important;
+			justify-content: space-around;
 
-        .tabs .slider .indicator {
-            position: relative;
-            width: 50px;
-            max-width: 100%;
-            margin: 0 auto;
-            height: 4px;
-            background: #646566;
-            border-radius: 1px;
-        }
+		}
 
-        .tabs .content {
-            margin-top: 30px;
-        }
+		.sections {
+			display: none;
+		}
 
-        .tabs .content section {
-            display: none;
-            animation-name: content;
-            animation-direction: normal;
-            animation-duration: 0.3s;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: 1;
-            line-height: 1.4;
-        }
+		.btn {
+			width: 90px !important;
+			border-radius: 45px;
+		}
 
-        .tabs ul li h2 {
-            color: #646566;
-            display: none;
-        }
+		#content-bottom nav ul li a span {
+			vertical-align: middle;
+			font-size: 0.75em;
+		}
 
-        .tabs ul li h2::after {
-            content: "";
-            position: relative;
-            display: block;
-            width: 30px;
-            height: 3px;
-            background: #646566;
-            margin-top: 5px;
-            left: 1px;
-        }
+		@import "bourbon";
+		@import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
 
-        .tabs input[name="tab-control"]:nth-of-type(1):checked~ul>li:nth-child(1)>label {
-            cursor: default;
-            color: #646566;
-        }
+		/* colors */
+		/* tab setting */
+		/* breakpoints */
+		/* selectors relative to radio inputs */
 
-        .tabs input[name="tab-control"]:nth-of-type(1):checked~ul>li:nth-child(1)>label svg {
-            fill: #646566;
-        }
 
-        /* @media (max-width: 600px) {
+
+		.tabs {
+			left: 50%;
+			transform: translateX(-50%);
+			position: relative;
+
+		}
+
+		.tabs input[name="tab-control"] {
+			display: none;
+		}
+
+		.tabs .content section h2,
+		.tabs ul li label {
+			font-family: "Montserrat";
+			font-weight: bold;
+			font-size: 18px;
+			color: #646566;
+		}
+
+		.tabs ul {
+			list-style-type: none;
+			padding-left: 0;
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 10px;
+			justify-content: space-between;
+			align-items: flex-end;
+			flex-wrap: wrap;
+			width: 75%;
+		}
+
+		.tabs ul li {
+			box-sizing: border-box;
+			flex: 1;
+			width: 25%;
+			padding: 0 10px;
+			text-align: center;
+		}
+
+		.tabs ul li label {
+			transition: all 0.3s ease-in-out;
+			color: #929daf;
+			padding: 5px auto;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+			white-space: nowrap;
+			-webkit-touch-callout: none;
+		}
+
+		.tabs ul li label br {
+			display: none;
+		}
+
+		.tabs ul li label svg {
+			fill: #929daf;
+			height: 1.2em;
+			vertical-align: bottom;
+			margin-inline-end: 0.2em;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.tabs ul li label:hover,
+		.tabs ul li label:focus,
+		.tabs ul li label:active {
+			outline: 0;
+			color: #bec5cf;
+		}
+
+		.tabs ul li label:hover svg,
+		.tabs ul li label:focus svg,
+		.tabs ul li label:active svg {
+			fill: #bec5cf;
+		}
+
+		.tabs .slider {
+			position: relative;
+			width: 25%;
+			transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+		}
+
+		.tabs .slider .indicator {
+			position: relative;
+			width: 50px;
+			max-width: 100%;
+			margin: 0 auto;
+			height: 4px;
+			background: #646566;
+			border-radius: 1px;
+		}
+
+		.tabs .content {
+			margin-top: 30px;
+		}
+
+		.tabs .content section {
+			display: none;
+			animation-name: content;
+			animation-direction: normal;
+			animation-duration: 0.3s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: 1;
+			line-height: 1.4;
+		}
+
+		.tabs ul li h2 {
+			color: #646566;
+			display: none;
+		}
+
+		.tabs ul li h2::after {
+			content: "";
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 3px;
+			background: #646566;
+			margin-top: 5px;
+			left: 1px;
+		}
+
+		.tabs input[name="tab-control"]:nth-of-type(1):checked~ul>li:nth-child(1)>label {
+			cursor: default;
+			color: #646566;
+		}
+
+		.tabs input[name="tab-control"]:nth-of-type(1):checked~ul>li:nth-child(1)>label svg {
+			fill: #646566;
+		}
+
+		/* @media (max-width: 600px) {
             .tabs input[name="tab-control"]:nth-of-type(1):checked~ul>li:nth-child(1)>label {
                 background: rgba(0, 0, 0, 0.08);
             }
         } */
 
-        .tabs input[name="tab-control"]:nth-of-type(1):checked~.slider {
-            transform: translateX(0%);
-        }
+		.tabs input[name="tab-control"]:nth-of-type(1):checked~.slider {
+			transform: translateX(0%);
+		}
 
-        .tabs input[name="tab-control"]:nth-of-type(1):checked~.content>section:nth-child(1) {
-            display: flex;
-        }
+		.tabs input[name="tab-control"]:nth-of-type(1):checked~.content>section:nth-child(1) {
+			display: flex;
+		}
 
-        .tabs input[name="tab-control"]:nth-of-type(2):checked~ul>li:nth-child(2)>label {
-            cursor: default;
-            color: #646566;
-        }
+		.tabs input[name="tab-control"]:nth-of-type(2):checked~ul>li:nth-child(2)>label {
+			cursor: default;
+			color: #646566;
+		}
 
-        .tabs input[name="tab-control"]:nth-of-type(2):checked~ul>li:nth-child(2)>label svg {
-            fill: #646566;
-        }
+		.tabs input[name="tab-control"]:nth-of-type(2):checked~ul>li:nth-child(2)>label svg {
+			fill: #646566;
+		}
 
-        /* @media (max-width: 600px) {
+		/* @media (max-width: 600px) {
             .tabs input[name="tab-control"]:nth-of-type(2):checked~ul>li:nth-child(2)>label {
                 background: rgba(0, 0, 0, 0.08);
             }
         } */
 
-        .tabs input[name="tab-control"]:nth-of-type(2):checked~.slider {
-            transform: translateX(100%);
-        }
+		.tabs input[name="tab-control"]:nth-of-type(2):checked~.slider {
+			transform: translateX(100%);
+		}
 
-        .tabs input[name="tab-control"]:nth-of-type(2):checked~.content>section:nth-child(2) {
-            display: flex;
-        }
+		.tabs input[name="tab-control"]:nth-of-type(2):checked~.content>section:nth-child(2) {
+			display: flex;
+		}
 
 
-        .tabs input[name="tab-control"]:nth-of-type(3):checked~ul>li:nth-child(3)>label {
-            cursor: default;
-            color: #646566;
-        }
+		.tabs input[name="tab-control"]:nth-of-type(3):checked~ul>li:nth-child(3)>label {
+			cursor: default;
+			color: #646566;
+		}
 
-        .tabs input[name="tab-control"]:nth-of-type(3):checked~ul>li:nth-child(3)>label svg {
-            fill: #646566;
-        }
+		.tabs input[name="tab-control"]:nth-of-type(3):checked~ul>li:nth-child(3)>label svg {
+			fill: #646566;
+		}
 
-        /* @media (max-width: 600px) {
+		/* @media (max-width: 600px) {
             .tabs input[name="tab-control"]:nth-of-type(2):checked~ul>li:nth-child(2)>label {
                 background: rgba(0, 0, 0, 0.08);
             }
         } */
 
-        .tabs input[name="tab-control"]:nth-of-type(3):checked~.slider {
-            transform: translateX(200%);
-        }
+		.tabs input[name="tab-control"]:nth-of-type(3):checked~.slider {
+			transform: translateX(200%);
+		}
 
-        .tabs input[name="tab-control"]:nth-of-type(3):checked~.content>section:nth-child(3) {
-            display: flex;
-        }
-
-
-        @keyframes content {
-            from {
-                opacity: 0;
-                transform: translateY(5%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0%);
-            }
-        }
-
-        @media (max-width: 1000px) {
-            .tabs ul li label {
-                white-space: initial;
-            }
-
-            .tabs ul li label br {
-                display: initial;
-            }
-
-            .tabs ul li label svg {
-                height: 1.5em;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .tabs ul li label {
-                padding: 5px;
-                border-radius: 5px;
-            }
-
-            .tabs ul li label span {
-                display: none;
-            }
-
-            .tabs .slider {
-                display: none;
-            }
-
-            .tabs .content {
-                margin-top: 20px;
-            }
-
-            .tabs ul li h2 {
-                display: block;
-            }
+		.tabs input[name="tab-control"]:nth-of-type(3):checked~.content>section:nth-child(3) {
+			display: flex;
+		}
 
 
-        }
+		@keyframes content {
+			from {
+				opacity: 0;
+				transform: translateY(5%);
+			}
 
-        #alert {
-            vertical-align: middle;
-            height: fit-content;
-            padding: 0.5rem !important;
-            margin-bottom: unset !important;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 2s;
-            max-width: 40%;
-        }
+			to {
+				opacity: 1;
+				transform: translateY(0%);
+			}
+		}
 
-        .showalert {
-            visibility: visible !important;
-        }
+		@media (max-width: 1000px) {
+			.tabs ul li label {
+				white-space: initial;
+			}
 
-        .alertop {
-            opacity: 1 !important;
-        }
+			.tabs ul li label br {
+				display: initial;
+			}
 
-        #alert:hover {
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
+			.tabs ul li label svg {
+				height: 1.5em;
+			}
+		}
 
-        .rownum {
-            position: absolute;
-            bottom: 5px;
-            right: 20px;
-            font-style: italic;
-            color: grey;
-        }
+		@media (max-width: 600px) {
+			.tabs ul li label {
+				padding: 5px;
+				border-radius: 5px;
+			}
 
-        .content-setting {
-            width: 100%;
-            height: fit-content;
-        }
+			.tabs ul li label span {
+				display: none;
+			}
 
-        .setrow {
-            display: flex;
-            flex-direction: row;
-            width: 50%;
-            height: fit-content;
-        }
+			.tabs .slider {
+				display: none;
+			}
 
-        .content-setting {
-            display: flex;
-            height: 150px;
+			.tabs .content {
+				margin-top: 20px;
+			}
 
-        }
+			.tabs ul li h2 {
+				display: block;
+			}
 
-        .grabberbtns {
-            margin-bottom: 5px;
-        }
 
-        .row {
-            margin-bottom: 5px;
-        }
-    </style>
+		}
+
+		#alert {
+			vertical-align: middle;
+			height: fit-content;
+			padding: 0.5rem !important;
+			margin-bottom: unset !important;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 2s;
+			max-width: 40%;
+		}
+
+		.showalert {
+			visibility: visible !important;
+		}
+
+		.alertop {
+			opacity: 1 !important;
+		}
+
+		#alert:hover {
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+
+		.rownum {
+			position: absolute;
+			bottom: 5px;
+			right: 20px;
+			font-style: italic;
+			color: grey;
+		}
+
+		.content-setting {
+			width: 100%;
+			height: fit-content;
+		}
+
+		.setrow {
+			display: flex;
+			flex-direction: row;
+			width: 50%;
+			height: fit-content;
+		}
+
+		.content-setting {
+			display: flex;
+			height: 150px;
+
+		}
+
+		.grabberbtns {
+			margin-bottom: 5px;
+		}
+
+		.row {
+			margin-bottom: 5px;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="tabs">
-        <div id="modal-header">
-            <h1 class="logo">
-                <img src="icon.jpg" alt="icon.jpg" id="logo-icon">
-                proxy setup
-            </h1>
-            <label class="alert alert-success" role="alert" style="position: absolute; right:0;" id="alert">
-            </label>
-        </div>
-        <div id="modal-content">
+	<div class="tabs">
+		<div id="modal-header">
+			<h1 class="logo">
+				<img src="icon.jpg" alt="icon.jpg" id="logo-icon">
+				proxy setup
+			</h1>
+			<label class="alert alert-success" role="alert" style="position: absolute; right:0;" id="alert">
+			</label>
+		</div>
+		<div id="modal-content">
 
-            <h2>change chrome proxy</h2>
-            <input type="radio" id="tab1" name="tab-control" checked>
-            <!-- <input type="radio" id="tab2" name="tab-control">
+			<h2>change chrome proxy</h2>
+			<input type="radio" id="tab1" name="tab-control" checked>
+			<!-- <input type="radio" id="tab2" name="tab-control">
             <input type="radio" id="tab3" name="tab-control">
             <ul>
                 <li title="Grabber"><label for="tab1" role="button">
@@ -518,84 +518,102 @@
             <div class="slider">
                 <div class="indicator"></div>
             </div> -->
-            <div class="content">
-                <section>
+			<div class="content">
+				<section>
 
-                    <div class="col-sm-6">
-                        <div style="width: 80%; position: relative; direction: ltr;">
+					<div class="col-sm-6">
+						<div style="width: 80%; position: relative; direction: ltr;">
 
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label for="ip">ip: </label></div>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" placeholder="ip" id="ip"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label for="port">port: </label></div>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="port" placeholder="port"></div>
-                            </div>
-                            <div>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <label for="username">username: </label></div>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="username" id="username">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <label for="password">password: </label></div>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="password" id="password">
-                                    </div>
-                                </div>
-                            </div>
-                            <div hidden>
-                                <br><label for="single">sites list</label>
-                                <br><textarea class="form-control" id="single" cols="30" rows="5"
-                                    placeholder="list of site for proxy \n devide each site with (;)"></textarea>
-                            </div>
-                        </div>
-                    </div>
+							<div class="row">
+								<div class="col-sm-4">
+									<label for="ip">ip: </label>
+								</div>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" placeholder="ip" id="ip">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<label for="port">port: </label>
+								</div>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="port" placeholder="port">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<label for="port">protocol: </label>
+								</div>
+								<div class="col-sm-8">
+									<select type="text" class="form-control" id="protocol">
+										<option value="http">http</option>
+										<option value="https">https</option>
+										<option value="socks5">socks5</option>
+										<option value="socks4">socks4</option>
+									</select>
+								</div>
+							</div>
+							<div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label for="username">username: </label>
+									</div>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" placeholder="username" id="username">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<label for="password">password: </label>
+									</div>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" placeholder="password" id="password">
+									</div>
+								</div>
+							</div>
+							<div hidden>
+								<br><label for="single">sites list</label>
+								<br><textarea class="form-control" id="single" cols="30" rows="5"
+									placeholder="list of site for proxy \n divide each site with (;)"></textarea>
+							</div>
+						</div>
+					</div>
 
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <select id="savedSelect" class="form-select" style="height: fit-content;">
-                            </select>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <label style="margin: 5px; margin-top: 10px; font-size: 17px;"
-                                    for="currentProxy">status:
-                                </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <label style="margin: 5px; margin-top: 10px; font-size: 17px;" for="currentProxy"
-                                    id="currentProxy"></label>
-                            </div>
-                        </div>
+					<div class="col-sm-6">
+						<div class="row">
+							<select id="savedSelect" class="form-select" style="height: fit-content;">
+							</select>
+						</div>
+						<div class="row">
+							<div class="col-sm-2">
+								<label style="margin: 5px; margin-top: 10px; font-size: 17px;" for="currentProxy">status:
+								</label>
+							</div>
+							<div class="col-sm-8">
+								<label style="margin: 5px; margin-top: 10px; font-size: 17px;" for="currentProxy"
+									id="currentProxy"></label>
+							</div>
+						</div>
 
-                        <div class="row align-bottom" style="position:absolute; bottom:0;">
-                            <button class="grabberbtns btn btn-outline-success"
-                                style=" vertical-align: bottom; margin-right: 7px;" title="start and save proxy"
-                                id="btnSetProxy">Run</button>
-                            <button class="grabberbtns btn btn-outline-warning"
-                                style=" vertical-align: bottom; margin-right: 7px;" title="clear text and stop proxy"
-                                id="btnClearProxy">Reset</button>
-                            <button class="grabberbtns btn btn-outline-danger"
-                                style=" vertical-align: bottom; margin-right: 7px;"
-                                title="remove current proxy settings from memory" id="btnDeleteProxy">Remove</button>
-                        </div>
+						<div class="row align-bottom" style="position:absolute; bottom:0;">
+							<button class="grabberbtns btn btn-outline-success"
+								style=" vertical-align: bottom; margin-right: 7px;" title="start and save proxy"
+								id="btnSetProxy">Run</button>
+							<button class="grabberbtns btn btn-outline-warning"
+								style=" vertical-align: bottom; margin-right: 7px;" title="clear text and stop proxy"
+								id="btnClearProxy">Reset</button>
+							<button class="grabberbtns btn btn-outline-danger"
+								style=" vertical-align: bottom; margin-right: 7px;"
+								title="remove current proxy settings from memory" id="btnDeleteProxy">Remove</button>
+						</div>
 
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-    </div>
-    <script src="popup.js"></script>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="popup.js"></script>
 </body>
 
 

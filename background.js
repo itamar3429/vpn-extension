@@ -1,48 +1,69 @@
-window.onload = async () => {
+(async () => {
+	chrome.runtime.onMessage.addListener(
+		async (message, sender, sendResponse) => {
+			console.log(message.data);
+			set_credentials(message.data, sender);
+			sendResponse("message received");
+		}
+	);
+	// do something here
+})();
 
-    const set_credentials = async (opt = {
-        username,
-        password
-    }, sender, sendResponse) => {
-        await new Promise(async (res) => {
-            console.log(sender.url);
-            if (opt.username && opt.password) {
-                chrome.webRequest.onAuthRequired.addListener((details) => {
-                        console.log(details);
-                        if (details.isProxy === true) {
-                            let credentials = {
-                                'username': opt.username,
-                                'password': opt.password
-                            }
-                            console.log('setting credentials');
-                            return {
-                                authCredentials: credentials
-                            }
-                        }
-                    }, {
-                        urls: ["<all_urls>"]
-                    },
-                    ['blocking']
-                );
-                chrome.webRequest.onCompleted.addListener(
-                    (details) => {
-                        console.log(details);
-                        console.log('completed credentials')
-                        if (sendResponse)
-                            sendResponse('messgae received');
-                        res(true)
-                    }, {
-                        urls: ["<all_urls>"]
-                    }
-                );
-            } else res(false)
-        })
+const onAuthIntercept = (details, data, asyncCb) => {
+	console.log("details", details);
+	console.log("opt", data);
+	console.log("async cb: ", asyncCb);
+	if (
+		details.isProxy === true &&
+		details.challenger?.host == data.ip &&
+		details.challenger?.port == data.port
+	) {
+		console.log("intercepting credentials!!!");
+		let credentials = {
+			username: data.username,
+			password: data.password,
+		};
+		console.log("credentials", credentials);
+		const res = {
+			authCredentials: credentials,
+			...credentials,
+		};
+		asyncCb?.(res);
+		return res;
+	}
+};
 
-    }
+const set_credentials = async (
+	data = {
+		username,
+		password,
+		host,
+		port,
+	},
+	sender
+) => {
+	await new Promise(async (res) => {
+		console.log(sender.url);
+		if (data.username && data.password) {
+			// add auth requirement listener
+			console.log(chrome.declarativeNetRequest);
+			chrome.webRequest.onAuthRequired.addListener(
+				(details, asyncCb) => onAuthIntercept(details, data, asyncCb),
+				{
+					urls: ["<all_urls>"],
+				}
+				// ["asyncBlocking"]
+			);
 
-    await chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
-        console.log(message.data)
-        set_credentials(message.data, sender)
-        sendResponse('messgae received');
-    });
-}
+			chrome.webRequest.onCompleted.addListener(
+				(details) => {
+					console.log("completed credentials");
+					res(true);
+				},
+				{
+					urls: ["<all_urls>"],
+				}
+			);
+		} else res(false);
+	});
+};

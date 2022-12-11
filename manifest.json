@@ -1,37 +1,33 @@
 {
-    "manifest_version": 2,
-    "name": "proxy setup",
-    "description": "connect your own proxy to chrome",
-    "version": "1.0.6",
-    "background": {
-        "scripts": [
-            "background.js"
-        ]
-    },
-    "permissions": [
-        "activeTab",
-        "storage",
-        "proxy",
-        "tabs",
-        "webRequest",
-        "webRequestBlocking",
-        "background"
-    ],
-    "icons": {
-        "128": "icon.png"
-    },
-    "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content.js"
-            ]
-        }
-    ]
+	"manifest_version": 3,
+	"name": "proxy setup",
+	"description": "connect your own proxy to chrome",
+	"version": "1.1.0",
+	"background": {
+		"service_worker": "./background.js"
+	},
+	"permissions": [
+		"activeTab",
+		"storage",
+		"proxy",
+		"tabs",
+		"webRequest",
+		"background",
+		"declarativeNetRequest",
+		"declarativeNetRequestWithHostAccess",
+		"declarativeNetRequestFeedback"
+	],
+	"icons": {
+		"128": "icon.png"
+	},
+	"action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	]
 }
