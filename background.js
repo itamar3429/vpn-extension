@@ -10,24 +10,21 @@
 })();
 
 const onAuthIntercept = (details, data, asyncCb) => {
-	console.log("details", details);
-	console.log("opt", data);
-	console.log("async cb: ", asyncCb);
 	if (
 		details.isProxy === true &&
 		details.challenger?.host == data.ip &&
-		details.challenger?.port == data.port
+		+details.challenger?.port == +data.port
 	) {
-		console.log("intercepting credentials!!!");
 		let credentials = {
 			username: data.username,
 			password: data.password,
 		};
-		console.log("credentials", credentials);
 		const res = {
 			authCredentials: credentials,
-			...credentials,
 		};
+
+		console.log("intercepting credentials!!!");
+
 		asyncCb?.(res);
 		return res;
 	}
@@ -43,16 +40,14 @@ const set_credentials = async (
 	sender
 ) => {
 	await new Promise(async (res) => {
-		console.log(sender.url);
 		if (data.username && data.password) {
 			// add auth requirement listener
-			console.log(chrome.declarativeNetRequest);
 			chrome.webRequest.onAuthRequired.addListener(
 				(details, asyncCb) => onAuthIntercept(details, data, asyncCb),
 				{
 					urls: ["<all_urls>"],
-				}
-				// ["asyncBlocking"]
+				},
+				["asyncBlocking"]
 			);
 
 			chrome.webRequest.onCompleted.addListener(
